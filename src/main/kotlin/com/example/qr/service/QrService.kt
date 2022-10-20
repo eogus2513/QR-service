@@ -10,7 +10,7 @@ class QrService(
     private val userRepository: UserRepository
 ) {
 
-    fun execute(): Response {
+    fun create(): Response {
         val user: User = userRepository.save(User())
         println(user.id)
         return Response(user.id)

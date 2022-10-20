@@ -2,6 +2,7 @@ package com.example.qr.controller
 
 import com.example.qr.controller.dto.Response
 import com.example.qr.service.QrService
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -11,5 +12,5 @@ class QrController(
 ) {
 
     @PostMapping
-    fun execute(): Response = qrService.execute()
+    fun create(): Response = qrService.create()
 }
