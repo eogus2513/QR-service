@@ -1,6 +1,5 @@
 package com.example.qr.service
 
-import com.example.qr.controller.dto.Response
 import com.example.qr.domain.User
 import com.example.qr.domain.UserRepository
 import org.springframework.stereotype.Service
@@ -10,8 +9,12 @@ class QrService(
     private val userRepository: UserRepository
 ) {
 
-    fun create(): Response {
+    fun create(): Long? {
         val user: User = userRepository.save(User())
-        return Response(user.id)
+        return user.id
+    }
+
+    fun max(): Long {
+        return userRepository.count();
     }
 }
